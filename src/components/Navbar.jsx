@@ -75,7 +75,7 @@ const Navbar = () => {
         className="wide-menu overflow-hidden h-screen w-screen text-white px-10 py-6  z-40  rounded-b-full duration-500 bg-[rgba(57,11,66,0.8)] backdrop-blur-md fixed top-[-100%] left-0"
       >
         <div className="top flex justify-between border-b py-4">
-          <div className="logo"><img src="/logo.png" alt="" /></div>
+          <div className="logo">The View</div>
           <div
             ref={close}
             className="close h-9 w-9 flex items-center justify-center bg-white rounded-full text-black cursor-pointer"
@@ -115,7 +115,7 @@ const Navbar = () => {
         </div>
       </div>
       <div  className="flex justify-between items-center py-8  px-10">
-      <div className="logo"><img className="h-14 invert" src="/logo.png" alt="" /></div>
+      <div className="logo">The Agency</div>
 
         <ul className="flex gap-20 font-light">
         {links.map((link, index) => (
