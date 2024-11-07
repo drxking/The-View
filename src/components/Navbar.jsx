@@ -71,9 +71,9 @@ const Navbar = () => {
     <>
       <div
         ref={wide_menu}
-        className="wide-menu overflow-hidden h-screen w-screen text-white px-10 py-6  z-40  rounded-b-full duration-500 bg-black/80 backdrop-blur-md fixed top-[-100%] left-0"
+        className="wide-menu overflow-hidden h-screen w-screen  text-[#F3E6E0] px-10 py-6  z-40  rounded-b-full duration-500 bg-[rgba(73,49,107,0.8)] backdrop-blur-md fixed top-[-100%] left-0"
       >
-        <div className="top flex justify-between border-b py-4">
+        <div className="top flex justify-between border-b py-3">
           <div className="logo">The View</div>
           <div
             ref={close}
@@ -113,7 +113,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center py-6 px-10">
+      <div className="fixed w-full z-10 flex justify-between items-center py-6 px-10">
         <div className="logo font-Neue text-xl">The View</div>
         <ul>
           <li
