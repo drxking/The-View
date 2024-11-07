@@ -6,8 +6,9 @@ import "remixicon/fonts/remixicon.css";
 let links = [
   { name: "Work", link: "/work" },
   { name: "Our Story", link: "/our-story" },
-  { name: "Connect", link: "/connect" },
+  { name: "Labs", link: "/labs" },
   { name: "Insights", link: "/insights" },
+  { name: "Connect", link: "/connect" },
 ];
 let lat_projets = [
   { name: "Aquatic biden", link: "/work" },
@@ -15,16 +16,16 @@ let lat_projets = [
   { name: "Chopstick", link: "/connect" },
 ];
 const Navbar = () => {
-  let bar = useRef(null);
+  // let bar = useRef(null);
   let wide_menu = useRef(null);
   let close = useRef(null);
 
   let [changes, setchanges] = useState(false);
   useEffect(() => {
     let stss = false;
-    bar.current.addEventListener("click", () => {
-      setchanges(true);
-    });
+    // bar.current.addEventListener("click", () => {
+    //   setchanges(true);
+    // });
     close.current.addEventListener("click", () => {
       setchanges(false);
     });
@@ -71,7 +72,7 @@ const Navbar = () => {
     <>
       <div
         ref={wide_menu}
-        className="wide-menu overflow-hidden h-screen w-screen text-white px-10 py-6  z-40  rounded-b-full duration-500 bg-black/80 backdrop-blur-md fixed top-[-100%] left-0"
+        className="wide-menu overflow-hidden h-screen w-screen text-white px-10 py-6  z-40  rounded-b-full duration-500 bg-[rgba(57,11,66,0.8)] backdrop-blur-md fixed top-[-100%] left-0"
       >
         <div className="top flex justify-between border-b py-4">
           <div className="logo">The View</div>
@@ -113,17 +114,24 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center py-6 px-10">
+      <div className="flex justify-between items-center py-8 px-10">
         <div className="logo font-Neue text-xl">The View</div>
-        <ul>
-          <li
+        <ul className="flex gap-20 font-light">
+        {links.map((link, index) => (
+                <a className="font-[poppins] " href={link.link} key={index}>
+                  {link.name}
+                </a>
+              ))}
+
+          {/* <li
             ref={bar}
             className="Bar flex flex-col bg-black h-9 w-9 cursor-pointer justify-center items-center rounded-full gap-1"
           >
             <div className="h-[2px] pointer-events-none rounded-lg bg-white w-5 top"></div>
             <div className="h-[2px] pointer-events-none rounded-lg bg-white w-5 center"></div>
             <div className="h-[2px] pointer-events-none rounded-lg bg-white w-5 bottom"></div>
-          </li>
+          </li> */}
+          {/* <li ref={bar} className="text-xl cursor-pointer">Menu</li> */}
         </ul>
       </div>
     </>

@@ -50,23 +50,27 @@ const Hero = () => {
         <img src="/star.png" className="h-[140vh] w-[100vh] " />
       </div> */}
       <div id="animate">
-        <div className="text-[8vw] leading-none font-light  uppercase hero-text">
+        <div className="text-[9vw] leading-[0.9] font-light  uppercase hero-text">
           <p className="flex justify-between">
-            <span>Ideas</span> <span>that</span> <span></span>
+            <span>DESign</span> <span>that</span> <span></span>
             <span></span>
             <span></span>
           </p>
           <p className="flex justify-between">
-            <span>Amplifies</span> <span>Your</span>
+            <span>Elevates</span> <span>Your</span>
           </p>
-          <p>Brand presence</p>
+          <p>Digital presence</p>
         </div>
       </div>
-      <div className="w-[80%]  flex justify-end">
-        <p className="text-sm mt-5 w-[22%]">
+      <div className="w-[85%]  flex justify-end">
+        <p className="text-sm mt-5 w-[22%] font-[poppins]">
           We build Bridges, connecting people to brands through interactive
           digital experiences.
         </p>
+      </div>
+      <div className="arrow font-[poppins] uppercase font-light text-sm flex flex-col items-center">
+        <p>Scroll</p>
+        <i class="ri-arrow-down-s-line text-xl animate-bounce mt-2"></i>
       </div>
     </div>
   );
