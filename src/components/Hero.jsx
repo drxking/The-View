@@ -32,9 +32,9 @@ const Hero = () => {
     gsap.to(".stars", {
       transform: `rotate(-15deg) translateY(${-(rotY / 10)}px) translateX(${-(rotX / 10)}px)`,
     });
-    gsap.to(".stars-2", {
-      transform: `rotate(30deg) translateY(${(rotY / 20)}px) translateX(${(rotX / 20)}px)`,
-    });
+    // gsap.to(".stars-2", {
+    //   transform: `rotate(30deg) translateY(${(rotY / 20)}px) translateX(${(rotX / 20)}px)`,
+    // });
   }, [rotX, rotY]);
 
   return (
@@ -46,9 +46,9 @@ const Hero = () => {
       <div className="stars absolute top-[15%] rotate-[-15deg]  z-10 left-[20%]">
         <img src="/star.png" className="h-40 w-40 " />
       </div>
-      <div className="stars-2 -z-10 absolute top-[-20%]  rotate-[30deg] blur-lg right-[10%]">
+      {/* <div className="stars-2 -z-10 absolute top-[-20%]  rotate-[30deg] blur-lg right-[10%]">
         <img src="/star.png" className="h-[140vh] w-[100vh] " />
-      </div>
+      </div> */}
       <div id="animate">
         <div className="text-[8vw] leading-none font-light  uppercase hero-text">
           <p className="flex justify-between">
