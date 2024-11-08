@@ -1,16 +1,16 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useEffect, useRef, useState,useContext } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import ClickContext from "./ClickContext";
 gsap.registerPlugin(useGSAP);
 
 const Loader = () => {
   let [click, setclick] = useState(false);
   let enter = useRef(null);
-
   const { setClicked } = useContext(ClickContext);
 
   useEffect(() => {
+
     enter.current.addEventListener("click", () => {
       setclick(true);
       setClicked(true);
@@ -71,6 +71,7 @@ const Loader = () => {
             <p className="font-[Dunk] text-left ">Immerse</p>
           </div>
         </div>
+        <audio src="../assets/BG5.mp3" loop></audio>
         <div className="center flex items-center justify-center">
           <div
             ref={enter}

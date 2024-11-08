@@ -77,11 +77,11 @@ const Hero = () => {
         <div id="animate">
           <div className="text-[9vw] leading-[0.9] font-light text-[rgba(0,0,0,0.95)]  uppercase hero-text">
             <div className="wrapper overflow-hidden">
-              <p className="start-anim flex justify-between">
+              <div className="start-anim flex justify-between">
                 <div>DESign</div> <div>that</div> <div></div>
                 <div></div>
                 <div></div>
-              </p>
+              </div>
             </div>
             <div className="wrapper overflow-hidden">
               <div className="start-anim flex justify-between gap-6">
