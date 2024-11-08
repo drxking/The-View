@@ -23,15 +23,15 @@ const Hero = () => {
       setrotX(0);
       setrotY(0);
     });
-    star.current.addEventListener("mousedown",()=>{
-      star.current.style.scale = 0.7
-    })
-    star.current.addEventListener("mouseup",()=>{
-      star.current.style.scale = 1
-    })
-    star.current.addEventListener("mouseleave",()=>{
-      star.current.style.scale = 1
-    })
+    star.current.addEventListener("mousedown", () => {
+      star.current.style.scale = 0.7;
+    });
+    star.current.addEventListener("mouseup", () => {
+      star.current.style.scale = 1;
+    });
+    star.current.addEventListener("mouseleave", () => {
+      star.current.style.scale = 1;
+    });
   });
 
   useGSAP(() => {
@@ -42,6 +42,20 @@ const Hero = () => {
     });
   }, [rotX, rotY]);
 
+  useGSAP(() => {
+    let time = gsap.timeline()
+    time.from(".start-anim div", {
+      y: `100%`,
+      delay: 2.7,
+      stagger: 0.1,
+    });
+    time.from(".para",{
+      opacity:0
+    })
+    time.from(".star",{
+      scale:0
+    })
+  });
   return (
     <div
       ref={effect}
@@ -52,22 +66,41 @@ const Hero = () => {
         ref={star}
         className="stars duration-300   absolute top-[15%]   z-10 left-[20%]"
       >
-        <img src="/star.png" className="h-40 w-40 pointer-events-none" />
+        <img src="/star.png" className="h-40 star w-40 pointer-events-none" />
       </div>
       <div id="animate">
         <div className="text-[9vw] leading-[0.9] font-light text-[rgba(0,0,0,0.95)]  uppercase hero-text">
-          <p className="flex justify-between">
-            <span>DESign</span> <span>that</span> <span></span>
-            <span></span>
-            <span></span>
-          </p>
-          <p className="flex justify-between">
-            <span>Elevates</span> <span>Your</span>
-          </p>
-          <p>Digital presence</p>
+          <div className="wrapper overflow-hidden">
+            <p className="start-anim flex justify-between">
+              <div>DESign</div> <div>that</div> <div></div>
+              <div></div>
+              <div></div>
+            </p>
+          </div>
+          <div className="wrapper overflow-hidden">
+            <div className="start-anim flex justify-between gap-6">
+              <div>Elevates</div>
+              <div className="flex vid-wrapper w-full max-h-28 overflow-hidden rounded-xl">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  className=" w-full object-cover"
+                  src="/square.mp4"
+                ></video>
+              </div>
+              <div>Your</div>
+            </div>
+          </div>
+          <div className="wrapper overflow-hidden">
+            <div className="start-anim flex justify-between">
+              <div>Digital </div>
+              <div> presence</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="w-[85%]  flex justify-end">
+      <div className="para w-[85%]  flex justify-end">
         <p className="text-sm mt-5 w-[22%] font-[poppins]">
           We build Bridges, connecting people to brands through interactive
           digital experiences.

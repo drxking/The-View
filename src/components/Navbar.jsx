@@ -4,11 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import "remixicon/fonts/remixicon.css";
 
 let links = [
-  { name: "Work", link: "/work" },
-  { name: "Our Story", link: "/our-story" },
-  { name: "Labs", link: "/labs" },
-  { name: "Insights", link: "/insights" },
-  { name: "Connect", link: "/connect" },
+  { name: "Work", link: "#" },
+  { name: "Our Story", link: "#" },
+  { name: "Labs", link: "#" },
+  { name: "Insights", link: "#" },
+  { name: "Connect", link: "#" },
 ];
 let lat_projets = [
   { name: "Aquatic biden", link: "/work" },
@@ -68,6 +68,15 @@ const Navbar = () => {
       );
     }
   }, [changes]);
+  useGSAP(() => {
+    gsap.from(".nav", {
+      y: `-100%`,
+      delay: 3.2,
+      opacity:0,
+      duration:0.5,
+      scale:1.2
+    });
+  });
   return (
     <>
       <div
@@ -105,24 +114,39 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="pb-10 pt-5 flex gap-4 border-t">
-              <a className="hover:underline uppercase text-sm tracking-widest" href="FaceBook">FaceBook</a>
+              <a
+                className="hover:underline uppercase text-sm tracking-widest"
+                href="FaceBook"
+              >
+                FaceBook
+              </a>
               -
-              <a className="hover:underline uppercase text-sm tracking-widest" href="Instagram">Instagram</a>
+              <a
+                className="hover:underline uppercase text-sm tracking-widest"
+                href="Instagram"
+              >
+                Instagram
+              </a>
               -
-              <a className="hover:underline uppercase text-sm tracking-widest" href="Twitter">Twitter</a>
+              <a
+                className="hover:underline uppercase text-sm tracking-widest"
+                href="Twitter"
+              >
+                Twitter
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <div  className="flex justify-between items-center py-8  px-10">
-      <div className="logo">The Agency</div>
+      <div className="flex nav justify-between items-center py-8  px-10">
+        <div className="logo">The Agency</div>
 
         <ul className="flex gap-20 font-light">
-        {links.map((link, index) => (
-                <a className="font-[poppins] " href={link.link} key={index}>
-                  {link.name}
-                </a>
-              ))}
+          {links.map((link, index) => (
+            <a className="font-[poppins] " href={link.link} key={index}>
+              {link.name}
+            </a>
+          ))}
 
           {/* <li
             ref={bar}
