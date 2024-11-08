@@ -7,6 +7,10 @@
   font-family: Neue;
   src: url("./assets/NeueMachina-Regular.e896c98c.otf");
 }
+@font-face {
+  font-family: dunk;
+  src: url("./assets/DrukMedium.otf");
+}
 * {
   font-family: Neue, sans-serif;
 }

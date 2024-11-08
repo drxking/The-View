@@ -1,7 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import "remixicon/fonts/remixicon.css";
+import ClickContext from "./ClickContext";
 
 let links = [
   { name: "Work", link: "#" },
@@ -19,6 +20,8 @@ const Navbar = () => {
   // let bar = useRef(null);
   let wide_menu = useRef(null);
   let close = useRef(null);
+
+  const { clicked } = useContext(ClickContext);
 
   let [changes, setchanges] = useState(false);
   useEffect(() => {
@@ -71,12 +74,12 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.from(".nav", {
       y: `-100%`,
-      delay: 3.2,
-      opacity:0,
-      duration:0.5,
-      scale:1.2
+      delay: 0.3,
+      opacity: 0,
+      duration: 0.5,
+      scale: 1.2,
     });
-  });
+  }, [clicked]);
   return (
     <>
       <div
